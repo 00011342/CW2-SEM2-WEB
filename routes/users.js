@@ -107,17 +107,17 @@ router.post('/api/v1/users/new',body('name','email').isEmpty(), (req, res) => {
 
 
 
-// // read operation
-// router.get('/api/v1/users/:id/view',(req,res)=>{
+// read operation
+router.get('/api/v1/users/:id/view',(req,res)=>{
 
-//   const id = req.params.id
-//   fs.readFile(Db,(err,data)=>{
-//       if (err) throw err
-//       const users = JSON.parse(data)
-//       const user = users.filter(user=> user.id ==id)[0]
-//       res.render('update',{user:user})
-//   })
-// })
+  const id = req.params.id
+  fs.readFile(Db,(err,data)=>{
+      if (err) throw err
+      const users = JSON.parse(data)
+      const user = users.filter(user=> user.id ==id)[0]
+      res.render('update',{user:user})
+  })
+})
 
 
 
