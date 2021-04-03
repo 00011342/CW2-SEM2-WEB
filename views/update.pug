@@ -1,0 +1,38 @@
+
+// Main Site
+include includes/header.pug
+main#site-main
+  .container
+    .box-nav.d-flex.justify-between
+      .filter
+        a(href='/api/v1/users')
+          i.fas.fa-angle-double-left
+          |  All Employees
+    .form-title.text-center
+      h2.text-title Information of Employee
+     
+  
+   
+  table#table_user 
+    tr  
+      th.w Name: 
+      td.ww #{user.name}
+    tr
+      th.w Email: 
+      td.ww #{user.email}
+    tr
+      th.w
+        span.mf 
+          <i class="fas fa-user-alt"></i> :
+      td.ww #{user.gender}
+    tr
+      th.w
+        span.st
+          <i class="fas fa-toggle-on"></i> :
+      td.ww #{user.status}
+    tr 
+
+  img.img(src=`/static/images/${user.image}`)
+ 
+        
+  

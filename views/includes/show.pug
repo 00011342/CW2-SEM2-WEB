@@ -1,0 +1,28 @@
+
+ul  
+    each user in users
+        tr 
+            td #{user.id}
+            td #{user.name}
+            td #{user.email}
+            td #{user.gender}
+            td #{user.status}
+            td 
+                a(href=`users/${user.id}/view`)
+                    span.btn_view
+                        <i class="far fa-envelope-open"></i>
+                        
+                
+                a(href=`users/${user.id}/delete`)
+                    span.btn_delete
+                        <i class="far fa-trash-alt"></i>
+              
+
+                 
+               
+               
+                
+                
+                
+
+                

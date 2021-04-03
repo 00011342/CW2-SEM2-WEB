@@ -1,0 +1,18 @@
+include includes/header.pug
+main#site-main
+  .container
+    .box-nav.d-flex.justify-between
+      .filter
+        a(href='/api/v1/users')
+          i.fas.fa-angle-double-left
+          |  All Employees
+    .form-title.text-center
+      h2.text-dark New Employee
+      span.text-light Use the below form to create a new account
+      if error 
+        p.error  Please fill the empty fields!
+      else if success 
+        p.success Thanks, you are successfully joined in our team
+    // add user form
+include includes/form.pug
+// /Main Site

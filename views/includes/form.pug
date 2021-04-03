@@ -1,0 +1,31 @@
+// form handling
+form#add_user( name='myForm' onsubmit="return validateForm()" action='/api/v1/users/new', method='POST' enctype='multipart/form-data' )
+  .new_user
+    .form-group
+      label.text-light(for='name') Name
+      input(type='text'  name='id'  value='' placeholder='Optional')
+      input(type='text' name='name'  value='' placeholder='Full Name')
+    .form-group
+      label.text-light(for='email') Email
+      input(type='text', name='email', value='', placeholder='example@gmail.com')
+    .form-group
+      label.text-light(for='gender') Gender
+      .radio.inline
+        input#radio-2(type='radio', name='gender', value='Male' )
+        label.radio-label(for='radio-2') Male
+      .radio.inline
+        input#radio-3(type='radio' name='gender', value='Female' )
+        label.radio-label(for='radio-3') Female
+    .form-group
+      label.text-light(for='gender') Status
+      .radio.inline
+        input#radio-4(type='radio', name='status', value='Active' )
+        label.radio-label(for='radio-4') Active
+      .radio.inline
+        input#radio-5(type='radio', name='status', value='Fired' )
+        label.radio-label(for='radio-5') Fired
+    .form-group
+        label Employee Photo
+        input.imgFile(type="file" name='image' value='Photo' required)
+    .form-group
+      button.btn.text-dark.update(type='submit') Save

@@ -1,0 +1,44 @@
+// Main Site
+
+   
+include includes/header.pug
+main#site-main
+  .container
+    .box-nav.d-flex.justify-between
+      a.border-shadow(href='/api/v1/users/new')
+        span.text-gradient
+          | New Employee 
+          i.fas.fa-user
+    // form handling
+    form(action='/api/v1/users', method='post')
+      table.table
+        thead.thead-dark
+          tr
+            th ID
+            th Name
+            th Email
+            th Gender
+            th Status
+            th Action
+        tbody 
+          include includes/show.pug
+include includes/footer.pug
+         
+ 
+         
+
+          
+         
+          
+          
+         
+         
+
+
+
+        
+        
+
+            
+        
+         
