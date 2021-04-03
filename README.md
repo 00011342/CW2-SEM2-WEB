@@ -23,12 +23,18 @@ Download zip file of the project from GitHub and let's set up the project!
 
 
 
-**URL link in Glitch Platform**
-https://charming-universal-title.glitch.me
+** App URL link on Glitch Platform**
+https://charming-universal-title.glitch.me/api/v1/users
+
+
+
+
+** Code URL on Glitch Platform**
+https://glitch.com/edit/#!/charming-universal-title
 
 
 
 
 **GitHUb repo link of the Project**
-[https://github.com/00011342/CW2-SEM2-WEB]
+https://github.com/00011342/CW2-SEM2-WEB
 
