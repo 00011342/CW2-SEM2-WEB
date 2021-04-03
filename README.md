@@ -22,7 +22,9 @@ Download zip file of the project from GitHub and let's set up the project!
 
 
 
+
 **URL link in Glitch Platform**
+https://charming-universal-title.glitch.me
 
 
 

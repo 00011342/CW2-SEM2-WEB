@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 const multer = require('multer');
+const upload = multer({dest:'./public/images'})
 const { json } = require('body-parser');
 const validator = require("express-validator");
 
@@ -13,15 +14,7 @@ const root = path.dirname(
   require.main.filename || process.require.main.filename
 );
 
-// multer config
-const storageConfig = multer.diskStorage({
-  destination: (req, file, cb) =>{
-      cb(null, path.join(__dirname, '../public/images'));
-  },
-  filename: (req, file, cb) =>{
-     cb(null, Id() + '.jpg');
-  }
-});
+
 
 //array for db
 let UserDb = []
@@ -52,14 +45,13 @@ router.get('/api/v1/users/new',(req,res)=>{
 })
 
 
-//multer use
-router.use(multer({ storage:storageConfig }).single("image"));
+
 // valdiation
 const { body, validationResult } = require('express-validator');
 
 
 
-router.post('/api/v1/users/new',body('name','email').isEmpty(), (req, res) => {
+router.post('/api/v1/users/new',upload.single("image"),body('name','email').isEmpty(), (req, res) => {
 
       const    name = req.body.name;
       const   email = req.body.email;
