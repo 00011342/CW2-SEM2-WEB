@@ -8,16 +8,16 @@ const path = require('path')
 
 
 
-// // routes
-// let users = require("./routes/users.js")
-// app.use("/", users)
+// routes
+let users = require("./routes/users.js")
+app.use("/", users)
 
 
 
-// // Static
-// app.use('/static',express.static('public'));
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
+// Static
+app.use('/static',express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 
 /// lsitening port 

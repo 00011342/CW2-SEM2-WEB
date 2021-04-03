@@ -68,36 +68,36 @@ router.post('/api/v1/users/new',body('name','email').isEmpty(), (req, res) => {
       const   image = req.file.filename;
  
 
-// // Finds the validation errors in this request and wraps them in an object with handy functions
-//  const errors = validationResult(req);
-//     if (errors.isEmpty()) {
-//       return res.render('addUser',{error:true})
+// Finds the validation errors in this request and wraps them in an object with handy functions
+ const errors = validationResult(req);
+    if (errors.isEmpty()) {
+      return res.render('addUser',{error:true})
       
-//     }else{
-//       fs.readFile(Db , (err, data)=>{
-//       if (err) throw err 
+    }else{
+      fs.readFile(Db , (err, data)=>{
+      if (err) throw err 
       
-//      res.render('addUser',{success:true})
+     res.render('addUser',{success:true})
 
-//       UserDb=JSON.parse(data)
+      UserDb=JSON.parse(data)
        
-//       UserDb.push({
-//         id: Id(),
-//         name:name,
-//         email:email,
-//         gender:gender,
-//         status:status,
-//         image:image
-//       })
+      UserDb.push({
+        id: Id(),
+        name:name,
+        email:email,
+        gender:gender,
+        status:status,
+        image:image
+      })
     
-//       fs.writeFile(Db, JSON.stringify(UserDb), (err) => {
-//         if (err) res.sendStatus(400)
-//          // res.render('addUser')
-//       })
-//     })
-//     }
-//   },
-// );
+      fs.writeFile(Db, JSON.stringify(UserDb), (err) => {
+        if (err) res.sendStatus(400)
+         // res.render('addUser')
+      })
+    })
+    }
+  },
+);
 
 
    
