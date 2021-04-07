@@ -112,6 +112,17 @@ router.get('/api/v1/users/:id/view',(req,res)=>{
 })
 
 
+// return  JSON format data
+router.get('/api/users',(req,res)=>{
+ 
+  fs.readFile(Db, (err,data)=>{
+
+    const users = JSON.parse(data)
+    res.json(users)
+  })
+
+})
+
 
 // delete 
 router.get('/api/v1/users/:id/delete', (req,res)=>{
